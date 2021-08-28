@@ -21,7 +21,7 @@ import java.util.List;
 public class RestaurnatController {
 
     @Autowired
-    FoodItemServiceImpl foodItemService;
+    FoodItemService foodItemService;
     @Autowired
     RestaurantService restaurantService;
 

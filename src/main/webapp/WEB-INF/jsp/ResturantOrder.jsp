@@ -93,33 +93,30 @@
             name="customerId" value="0"
             id="customerId" placeholder="Customer ID"/>
 
-    <button type='button' id="btnAdd"
-            value="Register">
-        Add
-    </button>
+
 
     <input type="reset" value="Reset">
 </form>
+<input type="submit" value="Add" onclick="addRow()">
+<script>
+    var table=document.getElementById('table');
 
-<%--<script>--%>
-<%--    var table=document.getElementById('table');--%>
-
-<%--    for(i=1;i<table.rows.length;i++){--%>
-<%--       table.rows[i].onclick=function ()--%>
-<%--       {--%>
-<%--           document.getElementById('fid').value=this.cells[0].innerHTML;--%>
-<%--           document.getElementById('fname').value=this.cells[1].innerHTML;--%>
-<%--           document.getElementById('fprice').value=this.cells[2].innerHTML;--%>
-<%--       }--%>
-<%--    }--%>
-<%--</script>--%>
+    for(i=1;i<table.rows.length;i++){
+       table.rows[i].onclick=function ()
+       {
+           document.getElementById('fid').value=this.cells[0].innerHTML;
+           document.getElementById('fname').value=this.cells[1].innerHTML;
+           document.getElementById('fprice').value=this.cells[2].innerHTML;
+       }
+    }
+</script>
 <h1>Order Table</h1>
 <form method="POST" action="invoice"  name="restaurantCounterOrderDTO">
     <input style="display: none" type="text" id="itemPay" name="dataValue">
     <input style="display: none" type="text" id="cId" value="0"  name="customerId">
     <button type="submit" value="Register" onclick="getValue()" >Pay</button>
 </form>
-<table border="1">
+<table border="1" id="tableList">
 <thead>
 <tr>
     <th>Food Id</th>
